@@ -21,7 +21,8 @@ func main() {
 
 	jsonString := `{"name": "battery sensor", "capacity": 40, "time": "2019-01-21T19:07:28z", "info": {"desc": "a sensor reading"}}`
 
-	var read SensorReading
+	var read map[string]interface{}
+	// var read SensorReading
 	err := json.Unmarshal([]byte(jsonString), &read)
 	if err != nil {
 		fmt.Println(err)
